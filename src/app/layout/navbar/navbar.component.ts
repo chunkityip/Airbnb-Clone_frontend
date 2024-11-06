@@ -6,6 +6,7 @@ import {MenuModule} from "primeng/menu";
 import {CategoryComponent} from "./category/category.component";
 import {AvatarComponent} from "./avatar/avatar.component";
 import {MenuItem} from "primeng/api";
+import { ToastService } from '../toast.service';
 
 
 
@@ -29,11 +30,15 @@ export class NavbarComponent implements OnInit {
   guest = "Add guests";
   dates = "Any week";
 
+  toastService = inject(ToastService);
+
   currentMenuItems: MenuItem[] | undefined = [];
 
   ngOnInit(): void {
-    this.fetchMenu();
+    this.currentMenuItems = this.fetchMenu();
+    this.toastService.send({ severity: 'info', summary: 'Welcome to Your Airbnb App' });
   }
+  
 
   private fetchMenu(): MenuItem[] {
    
