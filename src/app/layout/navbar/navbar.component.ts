@@ -5,10 +5,8 @@ import {ToolbarModule} from "primeng/toolbar";
 import {MenuModule} from "primeng/menu";
 import {CategoryComponent} from "./category/category.component";
 import {AvatarComponent} from "./avatar/avatar.component";
-import {DialogService, DynamicDialogRef} from "primeng/dynamicdialog";
 import {MenuItem} from "primeng/api";
-import {ToastService} from "../toast.service";
-import {ActivatedRoute} from "@angular/router";
+
 
 
 @Component({
@@ -38,37 +36,16 @@ export class NavbarComponent implements OnInit {
   }
 
   private fetchMenu(): MenuItem[] {
-    // if (this.authService.isAuthenticated()) {
-    //   return [
-    //     {
-    //       label: "My properties",
-    //       routerLink: "landlord/properties",
-    //       visible: this.hasToBeLandlord(),
-    //     },
-    //     {
-    //       label: "My booking",
-    //       routerLink: "booking",
-    //     },
-    //     {
-    //       label: "My reservation",
-    //       routerLink: "landlord/reservation",
-    //       visible: this.hasToBeLandlord(),
-    //     },
-    //     {
-    //       label: "Log out",
-    //       command: this.logout
-    //     },
-    //   ]
-    // } else {
+   
       return [
         {
           label: "Sign up",
           styleClass: "font-bold",
-          // command: this.login
+       
         },
         {
           label: "Log in",
-          // command: this.login
+
         }
       ]
     }
